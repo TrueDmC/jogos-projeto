@@ -7,6 +7,14 @@ public class FPSMove : MonoBehaviour
     public Vector2 intensidadedeRotacao;
     public float vel, deslocamentoAltura; 
     public LayerMask camada;
+
+    Rigidbody rb;
+
+    void Awake() {
+
+    rb = GetComponent<Rigidbody>();
+
+	}
       
 
     void FixedUpdate() {
