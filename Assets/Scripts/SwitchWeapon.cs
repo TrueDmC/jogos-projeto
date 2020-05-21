@@ -15,7 +15,7 @@ public class SwitchWeapon : MonoBehaviour
       }
 
         void Switch() {
-        WeaponinUse = (WeaponinUse + 1) % 8;
+        WeaponinUse = (WeaponinUse + 1) % AllWeapons.Length;
 
         for (int i = 0; i < AllWeapons.Length; i++) {
         if (i !=WeaponinUse) {
