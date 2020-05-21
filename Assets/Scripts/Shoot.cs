@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
 
         timertwo = Time.time;
 
-        if (timertwo - timerone <= pausa);
+        if (timertwo - timerone <= pausa)
         
         {
 
@@ -32,7 +32,7 @@ public class Shoot : MonoBehaviour
         bool startShoot = false;
 
         if (auto) {
-        startShoot = Input.GetMouseButtonDown(0);
+        startShoot = Input.GetMouseButton(0);
       } else {
         startShoot = Input.GetMouseButtonDown(0);
         }
