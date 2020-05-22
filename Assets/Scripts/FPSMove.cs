@@ -16,6 +16,9 @@ public class FPSMove : MonoBehaviour
 
 	}
       
+      void Start() {
+            Cursor.lockState = CursorLockMode.Locked;
+	  }
 
     void FixedUpdate() {
         
