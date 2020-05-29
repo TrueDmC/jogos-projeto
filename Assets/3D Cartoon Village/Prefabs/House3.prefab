@@ -369,6 +369,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4817424634847104}
+  - component: {fileID: 1896361004}
+  - component: {fileID: 1896361005}
   m_Layer: 0
   m_Name: House3
   m_TagString: Untagged
@@ -385,12 +387,41 @@ Transform:
   m_GameObject: {fileID: 1094211247975680}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 304.1, y: 0, z: 58.09}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.06581001, y: 0.06581, z: 0.06581001}
   m_Children:
   - {fileID: 4415527208595566}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &1896361004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094211247975680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 31.779917, y: 38.70624, z: 28.211681}
+  m_Center: {x: -14.085944, y: 18.853178, z: 13.605885}
+--- !u!208 &1896361005
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094211247975680}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 15.88996, y: 19.35312, z: 14.10584}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -14.08594, y: 18.85318, z: 13.60588}
+  m_TimeToStationary: 0.5
 --- !u!1 &1113135245427920
 GameObject:
   m_ObjectHideFlags: 0

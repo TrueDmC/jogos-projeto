@@ -8,9 +8,17 @@ public class BulletDestroy : MonoBehaviour
     public GameObject ExplosionEffect;
 
     void OnCollisionEnter(Collision col) {
-        if (Destroywhentouch)
-            Instantiate(ExplosionEffect);
-            Destroy(gameObject);
+        if (col.gameObject.tag == "Enemy") {
+            Blood blood = col.gameObject.GetComponent<Blood>();
+            blood.blood = blood.blood - 300;
+        }
 
-	}
+        {
+            if (Destroywhentouch)
+                Instantiate(ExplosionEffect);
+            Destroy(gameObject);
+        }
+
+    }
+
 }

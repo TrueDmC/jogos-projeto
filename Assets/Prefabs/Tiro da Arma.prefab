@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b0bf9749f9f5540bf79cabefe8549f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Destroywhentouch: 1
+  Destroywhentouch: 0
   ExplosionEffect: {fileID: 0}
 --- !u!1001 &8440057940528070618
 PrefabInstance:

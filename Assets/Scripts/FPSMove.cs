@@ -1,52 +1,69 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class FPSMove : MonoBehaviour
 {
     public Vector2 intensidadedeRotacao;
-    public float vel, deslocamentoAltura; 
+    public float vel, deslocamentoAltura;
     public LayerMask camada;
+
+    public static Vector3 Floorpoint = Vector3.zero;
 
     Rigidbody rb;
 
     void Awake() {
 
-    rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
-	}
-      
-      void Start() {
-            Cursor.lockState = CursorLockMode.Locked;
-	  }
+    }
+
+    void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
+    void Update() { 
+        if (Input.GetKeyDown(KeyCode.Escape)) { 
+            if (Cursor.lockState == CursorLockMode.Locked) {
+                Cursor.lockState = CursorLockMode.None;
+            } else {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
+    }
+    
+       
 
     void FixedUpdate() {
-        
-        rb.velocity = Vector3.zero;
 
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
-        
-        Vector3 rot = transform.eulerAngles;
+            rb.velocity = Vector3.zero;
 
-        rot.y += mouseX * intensidadedeRotacao.x * Time.deltaTime;
-        rot.x -= mouseY * intensidadedeRotacao.y * Time.deltaTime;
-        rot.z = 0;
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
 
-        transform.eulerAngles = rot;
+            Vector3 rot = transform.eulerAngles;
 
-        float movH = Input.GetAxis("Horizontal");
-        float movV = Input.GetAxis("Vertical");
+            rot.y += mouseX * intensidadedeRotacao.x * Time.deltaTime;
+            rot.x -= mouseY * intensidadedeRotacao.y * Time.deltaTime;
+            rot.z = 0;
 
-        Vector3 pos = transform.position;    
-        transform.Translate(movH * vel * Time.deltaTime, 0, movV * vel * Time.deltaTime);
+            transform.eulerAngles = rot;
 
-        RaycastHit hit;
+            float movH = Input.GetAxis("Horizontal");
+            float movV = Input.GetAxis("Vertical");
 
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, camada))
-         pos.y = hit.point.y + deslocamentoAltura;
+            Vector3 pos = transform.position;
+            transform.Translate(movH * vel * Time.deltaTime, 0, movV * vel * Time.deltaTime);
 
-        transform.position = new Vector3(transform.position.x, pos.y, transform.position.z);
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, camada))
+                Floorpoint = hit.point;
+            pos.y = Floorpoint.y + deslocamentoAltura;
+
+            transform.position = new Vector3(transform.position.x, pos.y, transform.position.z);
 
         }
-     }
+    }
