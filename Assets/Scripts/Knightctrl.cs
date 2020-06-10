@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Knightctrl : MonoBehaviour
 {
-	float speed = 4;
-	float rotSpeed = 100;
-	float rot = 0f;
-	float gravity = 8;
+	public float speed = 15;
+	public float rotSpeed = 100;
+	public float rot = 0f;
+	public float gravity = 8;
 
 
 	Vector3 moveDir = Vector3.zero;
@@ -18,9 +18,6 @@ public class Knightctrl : MonoBehaviour
 	Animator anim;
 
 
-
-
-	// Start is called before the first frame update
 	void Start()
 	{
 
@@ -30,7 +27,7 @@ public class Knightctrl : MonoBehaviour
 	}
 
 
-	// Update is called once per frame
+
 	void Update()
 	{
 		Movement();
@@ -52,7 +49,7 @@ public class Knightctrl : MonoBehaviour
 				}
 				else if (anim.GetBool("attacking") == false)
 				{
-					anim.SetBool("running", true);
+					anim.SetInteger("running", 1);
 					anim.SetInteger("condition", 1);
 					moveDir = new Vector3(0, 0, 1);
 					moveDir *= speed;
@@ -61,7 +58,7 @@ public class Knightctrl : MonoBehaviour
 			}
 			if (Input.GetKeyUp(KeyCode.W))
 			{
-				anim.SetBool("running", false);
+				anim.SetInteger("running", 0);
 				anim.SetInteger("condition", 0);
 				moveDir = new Vector3(0, 0, 0);
 
@@ -84,10 +81,10 @@ public class Knightctrl : MonoBehaviour
 			{
 				if (anim.GetBool("running") == true)
 				{
-					anim.SetBool("running", false);
+					anim.SetInteger("running", 0);
 					anim.SetInteger("condition", 0);
 				}
-				if (anim.GetBool("running") == false)
+				if (anim.GetInteger("running") == 0)
 				{
 					Attacking();
 				}

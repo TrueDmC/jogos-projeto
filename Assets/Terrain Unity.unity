@@ -2300,7 +2300,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: -0.05, y: 0.7, z: 0.11}
+  m_Center: {x: -0.02, y: 0.91, z: -0.08}
 --- !u!114 &311739965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2313,6 +2313,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df2cc52604fa6d45a1d043ebad60710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &311739966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311739963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3374a0ac5dc03a048b6ef775b08cd51b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blood: 12000
 --- !u!4 &311739967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400166, guid: 555dddb0fd62c1a4a8a87449606cff55,
@@ -3618,7 +3631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: 555dddb0fd62c1a4a8a87449606cff55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.83467627
+      value: -1.04
       objectReference: {fileID: 0}
     - target: {fileID: 400166, guid: 555dddb0fd62c1a4a8a87449606cff55, type: 3}
       propertyPath: m_LocalPosition.z
