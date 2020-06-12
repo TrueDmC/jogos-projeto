@@ -8,23 +8,23 @@ public class EnemyMovement : MonoBehaviour
 {
     
     public float minimumDistance;
-    NavMeshAgent agenteNM;
+    NavMeshAgent player;
 
     void Awake()
     {
-        agenteNM = GetComponent<NavMeshAgent>();
+        player = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
         Vector3 PlayerLocal = FPSMove.Floorpoint;
-        agenteNM.SetDestination(PlayerLocal);
+        player.SetDestination(PlayerLocal);
 
         float minimumDistanceBetweenPlayerandEnemy = Vector3.Distance(transform.position, PlayerLocal);
         if(minimumDistanceBetweenPlayerandEnemy <= minimumDistance) {
-            agenteNM.isStopped = true;
+            player.isStopped = true;
         } else {
-            agenteNM.isStopped = false;
+            player.isStopped = false;
         }
     }
 }
