@@ -23,7 +23,7 @@ public class IA : MonoBehaviour
     Blood bloodPlayer;
     Blood blood;
 
-    SistemaSom sistemaSom;
+   // SistemaSom sistemaSom;
 
     void Start ()
     {
