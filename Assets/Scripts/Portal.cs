@@ -27,6 +27,7 @@ public class Portal : MonoBehaviour
          playerTR.position = BackPoint.position;
          playerTR.rotation = BackPoint.rotation;
             Debug.Log("P: " + playerGB.name + " -> " + BackPoint.position.ToString(), BackPoint.gameObject);
+            Debug.Break();
         }
         
     }
