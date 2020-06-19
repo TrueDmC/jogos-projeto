@@ -195,6 +195,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4054372160434702952, guid: 420bfef6ede124946b4519ee2059cea3,
+        type: 3}
+      propertyPath: blood
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 5007996353878251198, guid: 420bfef6ede124946b4519ee2059cea3,
         type: 3}
       propertyPath: m_Name
@@ -534,6 +539,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4054372160434702952, guid: 420bfef6ede124946b4519ee2059cea3,
+        type: 3}
+      propertyPath: blood
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 5007996353878251198, guid: 420bfef6ede124946b4519ee2059cea3,
         type: 3}
       propertyPath: m_Name
